@@ -2,7 +2,7 @@
 
 This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
 
-[**Try out the demo!**](https://reactle.vercel.app/)
+[**Try out the demo!**](https://thewordle.vercel.app/)
 
 ## Build and run
 
@@ -21,8 +21,8 @@ $> npm run start
 #### Development
 
 ```bash
-$> docker build -t reactle:dev -f docker/Dockerfile .
-$> docker run -d -p 3000:3000 --name reactle-dev reactle:dev
+$> docker build -t thewordle:dev -f docker/Dockerfile .
+$> docker run -d -p 3000:3000 --name thewordle-dev thewordle:dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in browser.
@@ -30,8 +30,8 @@ Open [http://localhost:3000](http://localhost:3000) in browser.
 #### Production
 
 ```bash
-$> docker build --target=prod -t reactle:prod -f docker/Dockerfile .
-$> docker run -d -p 80:8080  --name reactle-prod reactle:prod
+$> docker build --target=prod -t thewordle:prod -f docker/Dockerfile .
+$> docker run -d -p 80:8080  --name thewordle-prod thewordle:prod
 ```
 
 Open [http://localhost](http://localhost) in browser.

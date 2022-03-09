@@ -8,16 +8,16 @@
   --default-cell-bg-color: theme('colors.white');
   --default-cell-border-color: theme('colors.black');
   --default-cell-text-color: theme('colors.black');
-  --absent-cell-bg-color: theme('colors.slate.400');
+  --absent-cell-bg-color: theme('colors.neutral.400');
   --correct-cell-bg-color: theme('colors.green.400');
   --present-cell-bg-color: theme('colors.yellow.400');
 }
 
 .dark {
-  --default-cell-bg-color: theme('colors.slate.900');
+  --default-cell-bg-color: theme('colors.neutral.900');
   --default-cell-border-color: theme('colors.white');
   --default-cell-text-color: theme('colors.white');
-  --absent-cell-bg-color: theme('colors.slate.700');
+  --absent-cell-bg-color: theme('colors.neutral.700');
 }
 
 .high-contrast {
@@ -174,18 +174,18 @@ svg.cursor-pointer:hover {
 
 @keyframes jiggle {
   0% {
-    transform: translate(0, 0);
+    transform: tranneutral(0, 0);
   }
   25% {
-    transform: translate(-0.5rem, 0);
+    transform: tranneutral(-0.5rem, 0);
   }
   50% {
-    transform: translate(0.5rem, 0);
+    transform: tranneutral(0.5rem, 0);
   }
   75% {
-    transform: translate(-0.5rem, 0);
+    transform: tranneutral(-0.5rem, 0);
   }
   100% {
-    transform: translate(0, 0);
+    transform: tranneutral(0, 0);
   }
 }

@@ -1,13 +1,13 @@
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { XCircleIcon } from '@heroicons/react/outline'
+import { Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { XCircleIcon } from '@heroicons/react/outline';
 
 type Props = {
-  title: string
-  children: React.ReactNode
-  isOpen: boolean
-  handleClose: () => void
-}
+  title: string;
+  children: React.ReactNode;
+  isOpen: boolean;
+  handleClose: () => void;
+};
 
 export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
   return (
@@ -40,11 +40,11 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
-            enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            enterTo="opacity-100 translate-y-0 sm:scale-100"
+            enterFrom="opacity-0 tranneutral-y-4 sm:tranneutral-y-0 sm:scale-95"
+            enterTo="opacity-100 tranneutral-y-0 sm:scale-100"
             leave="ease-in duration-200"
-            leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-            leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            leaveFrom="opacity-100 tranneutral-y-0 sm:scale-100"
+            leaveTo="opacity-0 tranneutral-y-4 sm:tranneutral-y-0 sm:scale-95"
           >
             <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6 dark:bg-gray-800">
               <div className="absolute right-4 top-4">
@@ -69,5 +69,5 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
