@@ -6,7 +6,10 @@ type Props = {
   handleClose: () => void
 }
 
+const softerBlueGrey = '#455469'
+
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
+  const absentBorderColor = { borderColor: softerBlueGrey }
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p
@@ -19,8 +22,16 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         className="text-sm text-gray-500 dark:text-gray-300"
         style={{ marginTop: 8 }}
       >
-        The word will relate to this week's lesson so you can gain a great
-        advantage by reading ahead (NKJV).
+        The word will relate to this week's lesson so you can gain an advantage
+        by{' '}
+        <a
+          href="https://drive.google.com/file/d/1ln03adElY53SOwbvKVdj1XMUM2R-LYsa/view?usp=sharing"
+          className="underline font-bold"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          reading ahead here.
+        </a>
       </p>
       <p
         className="text-sm text-gray-500 dark:text-gray-300"
@@ -36,50 +47,49 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           value="J"
           status="correct"
         />
-        <Cell value="E" />
-        <Cell value="S" />
-        <Cell value="U" />
-        <Cell value="S" />
+        <Cell value="E" style={absentBorderColor} />
+        <Cell value="S" style={absentBorderColor} />
+        <Cell value="U" style={absentBorderColor} />
+        <Cell value="S" style={absentBorderColor} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         The letter J is in the word and in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="E" />
+        <Cell value="P" style={absentBorderColor} />
+        <Cell value="E" style={absentBorderColor} />
         <Cell
           isRevealing={true}
           isCompleted={true}
           value="A"
           status="present"
         />
-        <Cell value="R" />
-        <Cell value="L" />
+        <Cell value="R" style={absentBorderColor} />
+        <Cell value="L" style={absentBorderColor} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         The letter A is in the word but in the wrong spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="G" />
-        <Cell value="R" />
-        <Cell value="A" />
+        <Cell value="G" style={absentBorderColor} />
+        <Cell value="R" style={absentBorderColor} />
+        <Cell value="A" style={absentBorderColor} />
         <Cell isRevealing={true} isCompleted={true} value="C" status="absent" />
-        <Cell value="E" />
+        <Cell value="E" style={absentBorderColor} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         The letter C is not in the word in any spot.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This Bible related wordle game is using an open source version of the
-        word guessing game we all know and love -
+        This Bible related wordle game is using{' '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
           className="underline font-bold"
         >
-          check out the code here
+          an open source version of the word guessing game we all know and love.
         </a>
       </p>
     </BaseModal>

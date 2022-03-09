@@ -44,6 +44,7 @@ export const VALID_GUESSES = [
   'gifts',
   'given',
   'glory',
+  'godly',
   'going',
   'grace',
   'greek',
