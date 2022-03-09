@@ -1,14 +1,14 @@
-import { MAX_CHALLENGES } from '../../constants/settings'
-import { CompletedRow } from './CompletedRow'
-import { CurrentRow } from './CurrentRow'
-import { EmptyRow } from './EmptyRow'
+import { MAX_CHALLENGES } from '../../constants/settings';
+import { CompletedRow } from './CompletedRow';
+import { CurrentRow } from './CurrentRow';
+import { EmptyRow } from './EmptyRow';
 
 type Props = {
-  guesses: string[]
-  currentGuess: string
-  isRevealing?: boolean
-  currentRowClassName: string
-}
+  guesses: string[];
+  currentGuess: string;
+  isRevealing?: boolean;
+  currentRowClassName: string;
+};
 
 export const Grid = ({
   guesses,
@@ -19,12 +19,12 @@ export const Grid = ({
   const empties =
     guesses.length < MAX_CHALLENGES - 1
       ? Array.from(Array(MAX_CHALLENGES - 1 - guesses.length))
-      : []
+      : [];
 
   return (
     <div
       style={{ height: '100%', width: '100%' }}
-      className="md:max-w-md m-4 mb-5 grid grid-cols-1 grid-rows-6 grid-flow-row-dense gap-2 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-purple rounded-lg"
+      className="md:max-w-md m-4 mb-5 grid grid-cols-1 grid-rows-6 grid-flow-row-dense gap-2 font-mono text-center font-bold leading-6 bg-stripes-purple rounded-lg"
     >
       {guesses.map((guess, i) => (
         <CompletedRow
@@ -40,5 +40,5 @@ export const Grid = ({
         <EmptyRow key={i} />
       ))}
     </div>
-  )
-}
+  );
+};

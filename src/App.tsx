@@ -241,7 +241,7 @@ function App() {
   };
 
   return (
-    <div style={{ paddingBottom: 30 }} className="h-screen flex flex-col">
+    <div style={{ paddingBottom: 60 }} className="h-screen flex flex-col md:pb-0">
       <Navbar
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
