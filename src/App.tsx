@@ -39,6 +39,7 @@ import './App.css';
 import { AlertContainer } from './components/alerts/AlertContainer';
 import { useAlert } from './context/AlertContext';
 import { Navbar } from './components/navbar/Navbar';
+import Div100vh from 'react-div-100vh';
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -241,61 +242,63 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col">
-      <Navbar
-        setIsInfoModalOpen={setIsInfoModalOpen}
-        setIsStatsModalOpen={setIsStatsModalOpen}
-        setIsSettingsModalOpen={setIsSettingsModalOpen}
-      />
-      <div className="pt-2 px-1 pb-8 flex flex-col grow">
-        <div
-          className="mb-2 pb-1 lg:pb-8 grow flex items-center justify-center"
-          style={{ maxHeight: 465 }}
-        >
-          <Grid
+    <Div100vh>
+      <div className="h-screen flex flex-col">
+        <Navbar
+          setIsInfoModalOpen={setIsInfoModalOpen}
+          setIsStatsModalOpen={setIsStatsModalOpen}
+          setIsSettingsModalOpen={setIsSettingsModalOpen}
+        />
+        <div className="pt-2 px-1 pb-8 flex flex-col grow">
+          <div
+            className="mb-2 pb-1 lg:pb-8 grow flex items-center justify-center"
+            style={{ maxHeight: 465 }}
+          >
+            <Grid
+              guesses={guesses}
+              currentGuess={currentGuess}
+              isRevealing={isRevealing}
+              currentRowClassName={currentRowClass}
+            />
+          </div>
+          <Keyboard
+            onChar={onChar}
+            onDelete={onDelete}
+            onEnter={onEnter}
             guesses={guesses}
-            currentGuess={currentGuess}
             isRevealing={isRevealing}
-            currentRowClassName={currentRowClass}
           />
+          <InfoModal
+            isOpen={isInfoModalOpen}
+            handleClose={() => setIsInfoModalOpen(false)}
+          />
+          <StatsModal
+            isOpen={isStatsModalOpen}
+            handleClose={() => setIsStatsModalOpen(false)}
+            guesses={guesses}
+            gameStats={stats}
+            isGameLost={isGameLost}
+            isGameWon={isGameWon}
+            handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+            isHardMode={isHardMode}
+            isDarkMode={isDarkMode}
+            isHighContrastMode={isHighContrastMode}
+            numberOfGuessesMade={guesses.length}
+          />
+          <SettingsModal
+            isOpen={isSettingsModalOpen}
+            handleClose={() => setIsSettingsModalOpen(false)}
+            isHardMode={isHardMode}
+            handleHardMode={handleHardMode}
+            isDarkMode={isDarkMode}
+            handleDarkMode={handleDarkMode}
+            isHighContrastMode={isHighContrastMode}
+            handleHighContrastMode={handleHighContrastMode}
+          />
+          <AlertContainer />
         </div>
-        <Keyboard
-          onChar={onChar}
-          onDelete={onDelete}
-          onEnter={onEnter}
-          guesses={guesses}
-          isRevealing={isRevealing}
-        />
-        <InfoModal
-          isOpen={isInfoModalOpen}
-          handleClose={() => setIsInfoModalOpen(false)}
-        />
-        <StatsModal
-          isOpen={isStatsModalOpen}
-          handleClose={() => setIsStatsModalOpen(false)}
-          guesses={guesses}
-          gameStats={stats}
-          isGameLost={isGameLost}
-          isGameWon={isGameWon}
-          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-          isHardMode={isHardMode}
-          isDarkMode={isDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          numberOfGuessesMade={guesses.length}
-        />
-        <SettingsModal
-          isOpen={isSettingsModalOpen}
-          handleClose={() => setIsSettingsModalOpen(false)}
-          isHardMode={isHardMode}
-          handleHardMode={handleHardMode}
-          isDarkMode={isDarkMode}
-          handleDarkMode={handleDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          handleHighContrastMode={handleHighContrastMode}
-        />
-        <AlertContainer />
       </div>
-    </div>
+    </Div100vh>
   );
 }
 
