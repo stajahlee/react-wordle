@@ -33,7 +33,6 @@ export const Keyboard = ({
 
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
-      console.log('in here?');
       if (e.code === 'Enter') {
         onEnter();
       } else if (e.code === 'Backspace') {
@@ -53,7 +52,7 @@ export const Keyboard = ({
   }, [onEnter, onDelete, onChar]);
 
   return (
-    <div>
+    <div className="pb-2">
       <div className="flex justify-center mb-1">
         {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map((key) => (
           <Key

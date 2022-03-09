@@ -162,12 +162,6 @@ function App() {
   }, [isGameWon, isGameLost, showSuccessAlert]);
 
   const onChar = (value: string) => {
-    console.log(
-      unicodeLength(`${currentGuess}${value}`),
-      currentGuess, value,
-      MAX_WORD_LENGTH,
-      guesses.length, MAX_CHALLENGES,
-      isGameWon);
     if (
       unicodeLength(`${currentGuess}${value}`) <= MAX_WORD_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
@@ -187,7 +181,6 @@ function App() {
     if (isGameWon || isGameLost) {
       return;
     }
-    console.log('here', 'what is the deal');
 
     if (!(unicodeLength(currentGuess) === MAX_WORD_LENGTH)) {
       setCurrentRowClass('jiggle');
@@ -255,7 +248,7 @@ function App() {
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
-        <div className="pb-6 grow">
+        <div className="pb-1 grow flex items-center justify-center">
           <Grid
             guesses={guesses}
             currentGuess={currentGuess}

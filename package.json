@@ -1,6 +1,6 @@
 {
   "name": "the-wordle",
-  "homepage": "http://stajahlee.github.io/the-wordle",
+  "homepage": "https://stajahlee.github.io/the-wordle",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
