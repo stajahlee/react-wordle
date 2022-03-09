@@ -1,19 +1,18 @@
-import { MAX_WORD_LENGTH } from '../../constants/settings';
-import { Cell } from './Cell';
-import { unicodeSplit } from '../../lib/words';
+import { MAX_WORD_LENGTH } from '../../constants/settings'
+import { Cell } from './Cell'
+import { unicodeSplit } from '../../lib/words'
 
 type Props = {
-  guess: string;
-  className: string;
-};
+  guess: string
+  className: string
+}
 
 export const CurrentRow = ({ guess, className }: Props) => {
-  const splitGuess = unicodeSplit(guess);
-  const emptyCells = Array.from(Array(MAX_WORD_LENGTH - splitGuess.length));
-  const classes = `flex justify-center mb-1 ${className}`;
+  const splitGuess = unicodeSplit(guess)
+  const emptyCells = Array.from(Array(MAX_WORD_LENGTH - splitGuess.length))
 
   return (
-    <div className='grid grid-cols-5 grid-rows-1 grid-flow-row-dense gap-1 font-mono text-white text-sm text-center font-bold leading-6'>
+    <div className="grid grid-cols-5 grid-rows-1 grid-flow-row-dense gap-1 font-mono text-white text-sm text-center font-bold leading-6">
       {splitGuess.map((letter, i) => (
         <Cell key={i} value={letter} />
       ))}
@@ -21,5 +20,5 @@ export const CurrentRow = ({ guess, className }: Props) => {
         <Cell key={i} />
       ))}
     </div>
-  );
-};
+  )
+}

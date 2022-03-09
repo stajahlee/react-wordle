@@ -137,5 +137,5 @@ export const VALID_GUESSES = [
   'would',
   'wrath',
   'years',
-  'youth'
+  'youth',
 ]
