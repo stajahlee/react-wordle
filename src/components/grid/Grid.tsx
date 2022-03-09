@@ -22,7 +22,10 @@ export const Grid = ({
       : [];
 
   return (
-    <div>
+    <div
+      style={{ height: '100%', width: '100%' }}
+      className='m-4 mb-5 grid grid-cols-1 grid-rows-6 grid-flow-row-dense gap-2 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-purple rounded-lg'
+    >
       {guesses.map((guess, i) => (
         <CompletedRow
           key={i}

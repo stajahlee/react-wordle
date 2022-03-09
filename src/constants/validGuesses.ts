@@ -76,6 +76,7 @@ export const VALID_GUESSES = [
   'order',
   'other',
   'peace',
+  'pearl',
   'peter',
   'place',
   'power',
