@@ -1,15 +1,15 @@
-import { Cell } from '../grid/Cell'
-import { BaseModal } from './BaseModal'
+import { Cell } from '../grid/Cell';
+import { BaseModal } from './BaseModal';
 
 type Props = {
-  isOpen: boolean
-  handleClose: () => void
-}
+  isOpen: boolean;
+  handleClose: () => void;
+};
 
-const softerBlueGrey = '#455469'
+const softerBlueGrey = '#455469';
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
-  const absentBorderColor = { borderColor: softerBlueGrey }
+  const absentBorderColor = { borderColor: softerBlueGrey };
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p
@@ -33,6 +33,14 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           reading ahead here.
         </a>
       </p>
+
+      <p
+        className="text-sm text-gray-500 dark:text-gray-300"
+        style={{ marginTop: 8 }}
+      >
+        All of the words that are valid guesses have 5 letters and they come from the NKJV of Galatians and Ephesians.
+      </p>
+
       <p
         className="text-sm text-gray-500 dark:text-gray-300"
         style={{ marginTop: 8 }}
@@ -82,16 +90,6 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-gray-500 dark:text-gray-300">
         The letter C is not in the word in any spot.
       </p>
-
-      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This Bible related wordle game is using{' '}
-        <a
-          href="https://github.com/cwackerfuss/react-wordle"
-          className="underline font-bold"
-        >
-          an open source version of the word guessing game we all know and love.
-        </a>
-      </p>
     </BaseModal>
-  )
-}
+  );
+};
