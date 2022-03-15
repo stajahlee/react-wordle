@@ -1,16 +1,16 @@
-import { CharStatus } from '../../lib/statuses';
-import classnames from 'classnames';
-import { REVEAL_TIME_MS } from '../../constants/settings';
-import { getStoredIsHighContrastMode } from '../../lib/localStorage';
+import { CharStatus } from '../../lib/statuses'
+import classnames from 'classnames'
+import { REVEAL_TIME_MS } from '../../constants/settings'
+import { getStoredIsHighContrastMode } from '../../lib/localStorage'
 
 type Props = {
-  value?: string;
-  status?: CharStatus;
-  isRevealing?: boolean;
-  isCompleted?: boolean;
-  position?: number;
-  style?: Record<string, unknown>;
-};
+  value?: string
+  status?: CharStatus
+  isRevealing?: boolean
+  isCompleted?: boolean
+  position?: number
+  style?: Record<string, unknown>
+}
 
 export const Cell = ({
   value,
@@ -20,10 +20,10 @@ export const Cell = ({
   position = 0,
   style,
 }: Props) => {
-  const isFilled = value && !isCompleted;
-  const shouldReveal = isRevealing && isCompleted;
-  const animationDelay = `${position * REVEAL_TIME_MS}ms`;
-  const isHighContrast = getStoredIsHighContrastMode();
+  const isFilled = value && !isCompleted
+  const shouldReveal = isRevealing && isCompleted
+  const animationDelay = `${position * REVEAL_TIME_MS}ms`
+  const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(
     'border-solid border-2 flex items-center justify-center mx-0.5 text-2xl font-bold dark:text-white p-2',
@@ -44,7 +44,7 @@ export const Cell = ({
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
     }
-  );
+  )
 
   return (
     <div className={classes} style={{ animationDelay, ...style }}>
@@ -52,5 +52,5 @@ export const Cell = ({
         {value}
       </div>
     </div>
-  );
-};
+  )
+}

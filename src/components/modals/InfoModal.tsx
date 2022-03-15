@@ -1,15 +1,15 @@
-import { Cell } from '../grid/Cell';
-import { BaseModal } from './BaseModal';
+import { Cell } from '../grid/Cell'
+import { BaseModal } from './BaseModal'
 
 type Props = {
-  isOpen: boolean;
-  handleClose: () => void;
-};
+  isOpen: boolean
+  handleClose: () => void
+}
 
-const softerBlueGrey = '#455469';
+const softerBlueGrey = '#455469'
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
-  const absentBorderColor = { borderColor: softerBlueGrey };
+  const absentBorderColor = { borderColor: softerBlueGrey }
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p
@@ -38,7 +38,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         className="text-sm text-gray-500 dark:text-gray-300"
         style={{ marginTop: 8 }}
       >
-        All of the words that are valid guesses have 5 letters and they come from the NKJV of Galatians and Ephesians.
+        All of the words that are valid guesses have 5 letters and they come
+        from the NKJV of Galatians and Ephesians.
       </p>
 
       <p
@@ -91,5 +92,5 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         The letter C is not in the word in any spot.
       </p>
     </BaseModal>
-  );
-};
+  )
+}
