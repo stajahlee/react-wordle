@@ -42,7 +42,6 @@ export const VALID_GUESSES = [
   'child',
   'chose',
   'comes',
-  'costa',
   'could',
   'court',
   'cross',
