@@ -5,7 +5,8 @@ import {
   XCircleIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/react/outline';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Animated } from 'react-animated-css';
 import { GAME_TITLE } from '../../constants/strings';
 
 type Props = {
@@ -22,6 +23,17 @@ export const Navbar = ({
   setIsSettingsModalOpen,
 }: Props) => {
   const [showBanner, setShowBanner] = useState(true);
+  const [fading, setFading] = useState(false);
+
+  function hideBanner() {
+    setFading(true);
+    setTimeout(() => setShowBanner(false), 1000);
+  }
+
+  useEffect(() => {
+    setTimeout(() => hideBanner(), 10000);
+  }, []);
+
   return (
     <div className="navbar">
       <div className="navbar-content px-5">
@@ -48,7 +60,12 @@ export const Navbar = ({
         </div>
       </div>
       <hr></hr>
-      {showBanner && (
+      <Animated
+        animationIn="zoomIn"
+        animationOut="zoomOut"
+        isVisible={!fading}
+        style={showBanner ? {} : { display: "none" }}
+      >
         <div className="announcement h-14 bg-gradient-to-r from-violet-800 to-fuchsia-800 flex items-center justify-center">
           <div
             style={{ maxWidth: '90vw', display: 'flex', alignItems: 'center' }}
@@ -62,7 +79,7 @@ export const Navbar = ({
             />
           </div>
         </div>
-      )}
+      </Animated>
     </div>
   );
 };
