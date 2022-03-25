@@ -4,6 +4,7 @@ import {
   InformationCircleIcon,
   XCircleIcon,
   QuestionMarkCircleIcon,
+  BookOpenIcon
 } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
 import { Animated } from 'react-animated-css';
@@ -14,6 +15,7 @@ type Props = {
   setIsHelpModalOpen: (value: boolean) => void;
   setIsStatsModalOpen: (value: boolean) => void;
   setIsSettingsModalOpen: (value: boolean) => void;
+  setIsLessonOpen: (value: boolean) => void;
 };
 
 export const Navbar = ({
@@ -21,6 +23,7 @@ export const Navbar = ({
   setIsHelpModalOpen,
   setIsStatsModalOpen,
   setIsSettingsModalOpen,
+  setIsLessonOpen
 }: Props) => {
   const [showBanner, setShowBanner] = useState(true);
   const [fading, setFading] = useState(false);
@@ -38,6 +41,10 @@ export const Navbar = ({
     <div className="navbar">
       <div className="navbar-content px-5">
         <div className="icons-group">
+          <BookOpenIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsLessonOpen(true)}
+          />
           <InformationCircleIcon
             className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
             onClick={() => setIsInfoModalOpen(true)}
