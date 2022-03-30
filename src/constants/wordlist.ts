@@ -87,7 +87,7 @@ export const WORDS = [
   'build',
   'works',
   'flesh',
-  '-----', // wed
+  'heirs', // wed march 30 gal 3
   '-----',
   '-----',
   '-----',
