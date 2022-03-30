@@ -20,32 +20,22 @@ export const Lesson = ({
         </button>
       </div>
       <div>
-        <Fade indicators={true} autoplay={false} style={{ height: '80vh' }}>
+        {/*<Fade indicators={true} autoplay={false} style={{ height: '80vh' }}>*/}
 
           <div style={style}>
             <div style={innerStyle}>
-              <p style={{ textAlign: 'center' }}>
-                Here is jason's first slide
+              <p className="text-sm md:text-2xl" style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100%'
+              }}>
+                Online lesson coming soon!
               </p>
             </div>
           </div>
 
-          <div style={style}>
-            <div style={innerStyle}>
-              <p style={{ textAlign: 'center' }}>
-                Here is jason's second slide
-              </p>
-            </div>
-          </div>
-
-          <div style={style}>
-            <div style={innerStyle}>
-              <p style={{ textAlign: 'center' }}>
-                Here is jason's third slide
-              </p>
-            </div>
-          </div>
-        </Fade>
+        {/*</Fade>*/}
       </div>
 
     </div>
@@ -62,7 +52,6 @@ const buttonContainer = {
 
 const style = {
   padding: "20px 0",
-  fontSize: "30px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -73,5 +62,6 @@ const style = {
 const innerStyle = {
   width: '80%',
   height: '95%',
-  backgroundColor: 'rgb(220,220,220,0.5)'
+  backgroundColor: 'rgb(220,220,220,0.5)',
+  borderRadius: 15
 };
