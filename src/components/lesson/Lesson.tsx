@@ -1,4 +1,4 @@
-import { Fade } from 'react-slideshow-image';
+// import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
 type Props = {
