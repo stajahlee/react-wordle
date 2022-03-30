@@ -22,22 +22,6 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         className="text-sm text-gray-500 dark:text-gray-300"
         style={{ marginTop: 8 }}
       >
-        The word will relate to this week's lesson so you can gain an advantage
-        by{' '}
-        <a
-          href="https://drive.google.com/file/d/1ln03adElY53SOwbvKVdj1XMUM2R-LYsa/view?usp=sharing"
-          className="underline font-bold"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          reading ahead here.
-        </a>
-      </p>
-
-      <p
-        className="text-sm text-gray-500 dark:text-gray-300"
-        style={{ marginTop: 8 }}
-      >
         All of the words that are valid guesses have 5 letters and they come
         from the NKJV of Galatians and Ephesians.
       </p>
