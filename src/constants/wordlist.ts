@@ -115,7 +115,7 @@ export const WORDS = [
   'flesh',
   'whole',
   'truth',
-  '-----',
+  'alone', // wed april 27 gal 6
   '-----',
   '-----',
   '-----',
