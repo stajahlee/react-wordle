@@ -78,7 +78,7 @@ export const Navbar = ({
             style={{ maxWidth: '90vw', display: 'flex', alignItems: 'center' }}
           >
             <p className="text-gray-100 text-sm text-center">
-              Correct word changes daily! Find the correct word each day in NKJV Galatians 6 this week!
+              Correct word changes daily! Find the correct word each day in NKJV Ephesians 1 this week!
             </p>
             <XCircleIcon
               className="h-6 w-6 ml-3 cursor-pointer dark:stroke-white"
